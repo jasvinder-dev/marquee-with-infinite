@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smooth Marquee Bullet Points</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      overflow: hidden;
+    }
+
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      background-color: black;
+      padding: 0;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: fit-content;
+      animation: scroll 25s linear infinite;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    .horizontal-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .horizontal-list li {
+      display: inline-flex;
+      align-items: center;
+      font-size: 18px;
+      font-weight: 400;
+      text-transform: uppercase;
+      margin-right: 20px;
+      position: relative;
+      white-space: nowrap;
+    }
+
+    .horizontal-list li:not(:last-child)::after {
+      content: '›';
+      color: red;
+      font-size: 40px;
+      font-weight: 900;
+      margin-left: 20px;
+      margin-bottom: 7px;
+    }
+
+    @media (max-width: 600px) {
+      .horizontal-list li {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <ul class="horizontal-list">
+        <li>Celebrating our 50th Anniversary in June 2026</li>
+        <li>New location #8-9505 Haldane Road Kelowna BC</li>
+        <li>Ask about our spring rental special</li>
+        <li>Celebrating our 50th Anniversary in June 2026</li>
+        <li>New location #8-9505 Haldane Road Kelowna BC</li>
+        <li>Ask about our spring rental special</li>
+        <li>Celebrating our 50th Anniversary in June 2026</li>
+        <li>New location #8-9505 Haldane Road Kelowna BC</li>
+        <li>Ask about our spring rental special</li>
+        <li>Celebrating our 50th Anniversary in June 2026</li>
+        <li>New location #8-9505 Haldane Road Kelowna BC</li>
+        <li>Ask about our spring rental special</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
